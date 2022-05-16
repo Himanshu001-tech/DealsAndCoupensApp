@@ -1,0 +1,25 @@
+server:
+  port: 8100
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka  
+
+spring:
+  application:
+    name: ZuulGateway
+
+zuul:
+  routes:
+    coupon-service:
+      url: http://localhost:8080
+
+    admin-service:
+      url: http://localhost:8081
+
+#    user-service:
+#      url: http://localhost:7002
+
+    login-service:
+      url: http://localhost:8006
